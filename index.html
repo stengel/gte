@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Gte by trobar</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Gte</h1>
+        <h2>Game Theory Explorer:  Build, explore and solve extensive form games. (Non-Google-App-Engine verison, uses Jetty directly)</h2>
+        <a href="https://github.com/trobar/gte" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>GTE - Game Theory Explorer</h1>
+
+<p>The Game Theory Explorer (by <a href="https://github.com/alfongj/gte">Alfonso</a> and <a href="https://github.com/rahulsavani/gte">Rahul</a>) is a graphical user interface for interactive construction and analysis of small to medium games. The GTE is part of the <a href="http://www.gambit-project.org">Gambit Project</a> - a
+library of game theory software. This version of GTE is designed to be portable across plarforms and runs on Linux and Windows (Mac OS X in progress). The software consists of a Web-Application-Client for the User-Interface (written in ActionScript) and a Web-Application-Server (Jetty) to process computational tasks such as calculation and enumeration of Nash-Equilibria.</p>
+
+<p><img src="https://github.com/downloads/trobar/gte/gte_small.png" alt="GTE Mainwindow"></p>
+
+<h2>Preface</h2>
+
+<p>GTE can be installed in three different ways:</p>
+
+<ol>
+<li>Compiled version (PRODUCTIVE), ready to run on an installed Jetty Server</li>
+<li>Client Development version (CLIENT) for changing the GUI written in ActionScript</li>
+<li>Server Development version (SERVER) for changing servlets or intergrate algorithmes written in Java or native code.</li>
+</ol><p><strong>Applied to PRODUCTIVE, CLIENT  and SERVER</strong></p>
+
+<h2>1. Install Java SDK</h2>
+
+<ol>
+<li>Download Java SDK (at least Java SE 6) at: <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" title="Java Download">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>
+</li>
+<li>Set the environment variable JAVA_HOME to the installed JAVA SDK</li>
+</ol><h2>2. Install ANT</h2>
+
+<ol>
+<li>Download ANT at: <a href="http://ant.apache.org/" title="ANT">http://ant.apache.org/</a>
+</li>
+<li>Extract the downloaded archive</li>
+<li>Set the environment variable ANT_HOME to the extracted ANT directory</li>
+<li>Add the <strong>bin</strong> directory to your PATH environment variable. See install instructions at: <a href="http://ant.apache.org/manual/install.html" title="Install ANT">http://ant.apache.org/manual/install.html</a>
+</li>
+</ol><h2>3. Install Jetty</h2>
+
+<p><strong>LINUX:</strong></p>
+
+<ol>
+<li><code>JETTY_VERSION=7.6.1.v20120215</code></li>
+<li><code>wget http://download.eclipse.org/jetty/$JETTY_VERSION/dist/jetty-distribution-$JETTY_VERSION.tar.gz</code></li>
+<li><code>tar xfz jetty-distribution-$JETTY_VERSION.tar.gz</code></li>
+<li>Set the environment variable JETTY_HOME to the extracted JETTY directory</li>
+<li>Check Jetty with executing in jetty directory: <code>java -jar start.jar</code>
+</li>
+<li>Access JETTY at: 127.0.0.1:8080<br>
+</li>
+<li>Terminate JETTY with CTRL-C</li>
+</ol><p><strong>WINDOWS:</strong></p>
+
+<ol>
+<li>Download JETTY Version 7.6.1 or above at: <a href="http://download.eclipse.org/jetty/" title="Jetty Download">http://download.eclipse.org/jetty/</a>
+</li>
+<li>Extract archive</li>
+<li>Open console and navigate to extracted directory</li>
+<li>Set the environment variable JETTY_HOME to the extracted JETTY directory</li>
+<li>Check Jetty with executing in jetty directory: <code>java -jar start.jar</code>
+</li>
+<li>Access JETTY at: 127.0.0.1:8080<br>
+</li>
+<li>Terminate JETTY with CTRL-C</li>
+</ol><p><strong>Applied to SERVER and CLIENT</strong></p>
+
+<h2>4. Install Flex SDK</h2>
+
+<ol>
+<li>Download  Flex SDK (Version 4.1A) at: <a href="http://sourceforge.net/adobe/flexsdk/wiki/Download%20Flex%204/" title="FLEX SDK">http://sourceforge.net/adobe/flexsdk/wiki/Download%20Flex%204/</a>
+</li>
+<li>Extract archive</li>
+<li>Set the environment variable FLEX_HOME to the extracted FLEX directory</li>
+<li>Add the <strong>bin</strong> directory to your PATH environment variable.</li>
+</ol><p>By now you should have 4 environment variables: <code>JAVA_HOME, ANT_HOME, JETTY_HOME and FLEX_HOME</code> pointing to the corresponding directories.</p>
+
+<h2>5. Install Eclipse IDE</h2>
+
+<p>Download Eclipse IDE for Java EE Developpers at: <a href="http://www.eclipse.org/downloads/" title="Eclipse Download">http://www.eclipse.org/downloads/</a></p>
+
+<h2>6. Run the PRODUCTIVE version</h2>
+
+<p>tba</p>
+
+<h2>7. CLIENT / SERVER version - Development process</h2>
+
+<p>The CLIENT version is only for developing the GUI. </p>
+
+<p>You do not need to execute ANT targets on the CLIENT version, because you only modify ActionScript files and Eclipse helps you to compile and test your code. Access the code from GitHub, change the GUI, submit the code back to GitHub</p>
+
+<p>If you want to compile, test and run the complete GTE you need to setup the 
+SERVER version. Access the code from GitHub and run the <strong>compileComplete</strong> ANT-target.</p>
+
+<h2>7. Setup and run the CLIENT version</h2>
+
+<ol>
+<li>Make a copy of your Eclipse installation, because you will integrate FLEX support for Eclipse, which is buggy and may harm other projects on eclipse.</li>
+<li>Download and install Adobe Flash Builder 4.6. Sign up to Adobe with your student ID (this might take some days until Adobe has verified you as a student). As a student you will get Flash Builder for free.</li>
+<li>Navigate to your Adobe Flash Builder install directory and go to the subdirectory <strong>utilities</strong>. Open and install "Adobe Flash Builder 4.6 Plugin-in Utility.exe"</li>
+<li>Switch to Eclipse and import the GitHub repository into a new Flex-Project</li>
+<li>Choose Flex 4.1A as the Flash Version (NOT 4.6). If you cannot choose 4.1A go to <strong>Configure Flex SDK</strong> and add the directory of the installed Flex SDK (4. Install Flex SDK) to Eclipse.</li>
+<li>Choose as the primary source directory <strong>gui-builder/src</strong>
+</li>
+<li>Finish the project wizard</li>
+<li>Navigate in the project explorer to <code>gui-builder/src/les/math/games/builder/view</code>,  right click on Main.mxml and choose <strong>set as default application</strong>.</li>
+<li>Delete the original *.mxml application file created by the project wizard (should be createt in gui-builder/src)</li>
+<li>Run "main.mxml" </li>
+</ol><h2>8. Run the Server version</h2>
+
+<p><strong>LINUX:</strong></p>
+
+<ul>
+<li>Install gcc as a C-compiler</li>
+</ul><p><strong>WINDOWS:</strong></p>
+
+<ul>
+<li>Install cygwin as a C-compiler</li>
+<li>Use the *setup.exe" from cygwin to install gcc-3 and mingw </li>
+<li>Add the <strong>bin</strong> directory to your PATH environment variable</li>
+</ul><p><strong>LINUX and WINDOWS:</strong></p>
+
+<ol>
+<li>Open Eclipse and import the GitHub repository into a new <strong>Dynamic Web Project</strong>.</li>
+<li>Use "Apache Tomcat 7" as a build target to include necessary java libraries into your classpath for compiling servlet.</li>
+<li>As "source directories" use <strong>lib-algo/src</strong> and <strong>web-service/src</strong>
+</li>
+<li>Open <strong>build.properties</strong> and set the ANT-Variables <code>JETTY_HOME</code> and <code>FLEX_HOME</code> to your installed FLEX SDK and JETTY installation (absolute path)</li>
+<li>Go to <strong>web-service/src</strong> and open <strong>config.properties</strong>. Set the property <code>path.jetty</code> to you JETTY installation (absolute path)</li>
+<li>Execute the <code>compileComplete</code> ANT-target. The target compiles the servlets, FLEX GUI, native Code, packs the compiled code into a War-file and deploys it to JETTY (<strong>webapps</strong>) and startes the JETTY server.</li>
+<li>Access GTE at: <code>127.0.0.1:8080/gte</code>
+</li>
+<li>Stop the JETTY server using the ANT-target <strong>jetty-stop</strong>
+</li>
+</ol><h2>9. Additional information</h2>
+
+<p>Please find additional instructions on how to include your native algorithm into the SERVER version on GitHub.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/trobar/gte/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/trobar/gte/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/trobar/gte"></a> is maintained by <a href="https://github.com/trobar">trobar</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
